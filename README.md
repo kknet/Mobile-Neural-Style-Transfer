@@ -12,13 +12,15 @@ Python 3.5
 
 Mac 10.13.6
 
-XCode 10.1
+Xcode 10.1
 
 ## Installation
 
-    pip3 install torch torchvision onnx onnx_coreml
+    pip3 install torch torchvision onnx onnx_coreml coremltools
 
-## Process
+## Model Conversion
+
+### PyTorch -> ONNX -> CoreML
 
 Download the pretrained models.
     
@@ -32,8 +34,13 @@ Convert the ONNX model to CoreML model.
 
     python3 onnx_to_coreml.py saved_models/candy.onnx saved_models/candy.mlmodel
 
-!! Remember to set input_names, output_names, image_input_names and image_output_names during the transformation process. It will generate the method **prediction(inputImage: CVPixelBuffer)-> modelOutPut** in XCode project.
+!! Remember to set input_names, output_names, image_input_names and image_output_names during the transformation process. It will generate the method **prediction(inputImage: CVPixelBuffer)-> modelOutPut** in Xcode project.
 
+## Visualize CoreML Model
+
+Visualize CoreML model with coremltools.
+
+    python3 viz_coreml saved_models/candy.mlmodel
 
 ## Referance
 1. [PyTorch models](https://github.com/pytorch/examples)
