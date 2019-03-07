@@ -16,7 +16,7 @@ Xcode 10.1
 
 ## Installation
 
-    pip3 install torch torchvision onnx onnx_coreml coremltools
+    pip3 install torch torchvision onnx onnx_coreml coremltools sklearn
 
 ## Model Conversion
 
